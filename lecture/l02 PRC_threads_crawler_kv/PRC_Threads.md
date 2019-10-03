@@ -3,46 +3,40 @@
 Most commonly-asked question: 
 
 ### Why Go?
-  6.824 used C++ for many years
-    C++ worked out well
-    but students spent time tracking down pointer and alloc/free bugs
-    and there's no very satisfactory C++ RPC package
-  Go is a bit better than C++ for us
-    good support for concurrency (goroutines, channels, &c)
-    good support for RPC
-    garbage-collected (no use after freeing problems)
-    type safe
-    threads + GC is particularly attractive!
-  We like programming in Go
-    relatively simple and traditional
+  6.824 used C++ for many years. C++ worked out well but students **spent time tracking down pointer** and **alloc/free bugs** and there's **no very satisfactory C++ RPC package**
+  
+  Go is a bit better than C++ for us:
+    - good support for concurrency (goroutines, channels, &c)
+    - good support for RPC
+    - garbage-collected (no use after freeing problems)
+    - type safe
+    - threads + GC is particularly attractive!
+  
+  We like programming in Go: relatively simple and traditional
   After the tutorial, use https://golang.org/doc/effective_go.html
-  Russ Cox will give a guest lecture March 8th
+  Russ Cox will give a guest lecture March 8th.
 
-Threads
-  threads are a useful structuring tool
-  Go calls them goroutines; everyone else calls them threads
-  they can be tricky
+### Why threads?
 
-Why threads?
-  They express concurrency, which shows up naturally in distributed systems
-  I/O concurrency:
-    While waiting for a response from another server, process next request
-  Multicore:
-    Threads run in parallel on several cores
+Threads are a **useful structuring tool**; Go calls them **goroutines**; everyone else calls them threads; they can be tricky
+
+- They express concurrency, which shows up naturally in distributed systems I/O concurrency:
+- While waiting for a response from another server, process next request
+- Multicore: Threads run in parallel on several cores
 
 Thread = "thread of execution"
-  threads allow one program to (logically) execute many things at once
-  the threads share memory
-  each thread includes some per-thread state:
-    program counter, registers, stack
+  - threads allow one program to (logically) execute many things at once
+  - the threads share memory
+  - each thread includes some per-thread state:
+    - program counter, registers, stack
 
 How many threads in a program?
-  Sometimes driven by structure
-    e.g. one thread per client, one for background tasks
-  Sometimes driven by desire for multi-core parallelism
-    so one active thread per core
-    the Go runtime automatically schedules runnable goroutines on available cores
-  Sometimes driven by desire for I/O concurrency
+  - Sometimes driven by **structure**
+    - e.g. one thread per client, one for background tasks
+  - Sometimes driven by desire for **multi-core parallelism**
+    - so one active thread per core
+    - the Go runtime automatically schedules runnable goroutines on available cores
+  - Sometimes driven by desire for **I/O concurrency**
     the number is determined by latency and capacity
     keep increasing until throughput stops growing
   Go threads are pretty cheap
