@@ -101,3 +101,19 @@ master: Map/Reduce task completed
 PASS
 ok  	mapreduce	2.672s
 ```
+
+### Part II: Single-worker word count
+
+Now you will implement word count — a simple Map/Reduce example. Look in main/wc.go; you'll find empty mapF() and reduceF() functions. Your job is to insert code so that wc.go reports the number of occurrences of each word in its input. A word is any contiguous sequence of letters, as determined by unicode.IsLetter.
+
+There are some input files with pathnames of the form `pg-*.txt` in `~/6.824/src/main`, downloaded from Project Gutenberg. Here's how to run wc with the input files:
+
+```shell
+$ cd 6.824
+$ export "GOPATH=$PWD"
+$ cd "$GOPATH/src/main"
+$ go run wc.go master sequential pg-*.txt
+# command-line-arguments
+./wc.go:14: missing return at end of function
+./wc.go:21: missing return at end of function
+```
