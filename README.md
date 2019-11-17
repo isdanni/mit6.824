@@ -16,8 +16,8 @@ Spring 2018. Implemented with Go 1.10.
 
 - [x] Lab 3: Fault-tolerant Key/Value Service
 
-- [x] Lab 4: Sharded Key/Value Service
+- [ ] Lab 4: Sharded Key/Value Service
 
-    - [x] Garbage collection of state
+    - [ ] Garbage collection of state
     
-    - [x] Client requests during configuration changes
+    - [ ] Client requests during configuration changes
