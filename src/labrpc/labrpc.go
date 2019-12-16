@@ -215,7 +215,6 @@ func (rn *Network) ProcessReq(req reqMsg) {
 		}
 
 		if reliable == false && (rand.Int()%1000) < 100 {
-			// drop the request, return as if timeout
 			req.replyCh <- replyMsg{false, nil}
 			return
 		}
