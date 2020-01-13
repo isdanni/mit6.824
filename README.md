@@ -1,8 +1,8 @@
 # mit6.824 Distributed Systems
 
-Spring 2018. Implemented with Go 1.10.
+Spring 2020. Implemented with Go 1.10.
 
-[https://pdos.csail.mit.edu/6.824/index.html](https://pdos.csail.mit.edu/6.824/index.html)
+[https://pdos.csail.mit.edu/6.824/schedule.html](https://pdos.csail.mit.edu/6.824/schedule.html)
 
 ### What is 6.824 about?
 
@@ -10,14 +10,16 @@ Spring 2018. Implemented with Go 1.10.
 
 ### Lab
 
-- [x] Lab 1: MapReduce
+- Lab 1: MapReduce
+- Lab 2: replication for fault-tolerance using Raft
+- Lab 3: fault-tolerant key/value store
+- Lab 4: sharded key/value store
 
-- [x] Lab 2: Raft
-
-- [x] Lab 3: Fault-tolerant Key/Value Service
-
-- [ ] Lab 4: Sharded Key/Value Service
-
-    - [ ] Garbage collection of state
-    
-    - [ ] Client requests during configuration changes
+### 
+lectures
+  readings
+  two exams
+  labs
+  final project (optional)
+  TA office hours
+  piazza for announcements and lab help
