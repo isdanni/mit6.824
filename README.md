@@ -15,11 +15,14 @@ Spring 2020. Implemented with Go 1.10.
 - Lab 3: fault-tolerant key/value store
 - Lab 4: sharded key/value store
 
-### 
-lectures
-  readings
-  two exams
-  labs
-  final project (optional)
-  TA office hours
-  piazza for announcements and lab help
+### Set up
+
+1. Install golang, and setup golang environment variables and directories. Click [here](https://github.com/golang/go/wiki/SettingGOPATH) to learn it.
+
+2. Setup the labs.
+```shell
+cd $GOPATH
+git clone https://github.com/isdanni/mit6.824.git
+cd mit6.824
+export GOPATH=$GOPATH:$(pwd)
+```
