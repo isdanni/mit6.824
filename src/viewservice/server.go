@@ -12,11 +12,10 @@ import "sync/atomic"
 type ViewServer struct {
 	mu       sync.Mutex
 	l        net.Listener
-	dead     int32 // for testing
-	rpccount int32 // for testing
+	dead     int32
+	rpccount int32
 	me       string
 
-	// Your declarations here.
 	isPrimaryAck    bool
 	currView        View
 	nextView        View
