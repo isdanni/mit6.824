@@ -26,3 +26,7 @@ git clone https://github.com/isdanni/mit6.824.git
 cd mit6.824
 export GOPATH=$GOPATH:$(pwd)
 ```
+
+### Notes
+
+- Tne source code also contains `/kvpaxos`, the implementation of consensus algorithm [paxos](https://en.wikipedia.org/wiki/Paxos_(computer_science));
