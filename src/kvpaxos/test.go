@@ -10,6 +10,7 @@ import "math/rand"
 import "strings"
 import "sync/atomic"
 
+
 func check(t *testing.T, ck *Clerk, key string, value string) {
 	v := ck.Get(key)
 	if v != value {
