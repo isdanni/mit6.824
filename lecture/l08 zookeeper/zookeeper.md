@@ -212,7 +212,7 @@ Example: Simple Locks (Section 2.4)
 
   Q: what if lock released just as loser calls exists()?
 
-Example: Locks without Herd Effect
+### Example: Locks without Herd Effect
   (look at pseudo-code in paper, Section 2.4, page 6)
   1. create a "sequential" file
   2. list files
@@ -231,22 +231,23 @@ Example: Locks without Herd Effect
      if client that created lock-11 dies before it gets the lock, the
      watch will fire but it isn't my turn yet.
 
-Using these locks
-  Different from single-machine thread locks!
+### Using these locks
+  - Different from single-machine thread locks!
     If lock holder fails, system automatically releases locks.
     So locks are not really enforcing atomicity of other activities.
     To make writes atomic, use "ready" trick or mini-transactions.
-  Useful for master/leader election.
+  - Useful for master/leader election.
     New leader must inspect state and clean up.
-  Or soft locks, for performance but not correctness
+  - Or soft locks, for performance but not correctness
     e.g. only one worker does each Map or Reduce task (but OK if done twice)
     e.g. a URL crawled by only one worker (but OK if done twice)
 
-ZooKeeper is a successful design.
+### ZooKeeper is a successful design.
   see ZooKeeper's Wikipedia page for a list of projects that use it
   Rarely eliminates all the complexity from distribution.
     e.g. GFS master still needs to replicate file meta-data.
     e.g. GFS primary has its own plan for replicating chunks.
+  
   But does bite off a bunch of common cases:
     Master election.
     Persistent master state (if state is small).
@@ -254,14 +255,14 @@ ZooKeeper is a successful design.
     Worker registration.
     Work queues.
   
-Topics not covered:
-  persistence
-  details of batching and pipelining for performance
-  fuzzy snapshots
-  idempotent operations
-  duplicate client request detection
+### Topics not covered:
+- persistence
+- details of batching and pipelining for performance
+- fuzzy snapshots
+- idempotent operations
+- duplicate client request detection
 
-References:
+### References:
   https://zookeeper.apache.org/doc/r3.4.8/api/org/apache/zookeeper/ZooKeeper.html
   ZAB: http://dl.acm.org/citation.cfm?id=2056409
   https://zookeeper.apache.org/
