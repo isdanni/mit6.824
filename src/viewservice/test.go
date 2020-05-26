@@ -7,6 +7,7 @@ import "fmt"
 import "os"
 import "strconv"
 
+
 func check(t *testing.T, ck *Clerk, p string, b string, n uint) {
 	view, _ := ck.Get()
 	if view.Primary != p {
