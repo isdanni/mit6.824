@@ -37,17 +37,17 @@ Q: Would reads from followers be linearizable?
 ### Q: What if a client reads from an up-to-date replica, then a lagging replica?
    It may see data values go *backwards* in time! Also forbidden.
 
-Raft and Lab 3 avoid these problems.
+##### Raft and Lab 3 avoid these problems.
   Clients have to send reads to the leader.
   So Lab 3 reads are linearizable.
   But no opportunity to divide the read load over the followers.
   
-How does ZooKeeper skin this cat?
+##### How does ZooKeeper skin this cat?
   By changing the definition of correctness!
   It allows reads to yield stale data.
   But otherwise preserves order.
 
-Ordering guarantees (Section 2.3)
+##### Ordering guarantees (Section 2.3)
   * Linearizable writes
     clients send writes to the leader
     the leader chooses an order, numbered by "zxid"
@@ -64,7 +64,7 @@ Ordering guarantees (Section 2.3)
       a client's read executes after all previous writes by that client
         a server may block a client's read to wait for previous write, or sync()
 
-Why does this make sense?
+##### Why does this make sense?
   I.e. why OK for reads to return stale data?
        why OK for client 1 to see new data, then client 2 sees older data?
 
