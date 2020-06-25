@@ -125,7 +125,7 @@ The other big ZooKeeper topic: a general-purpose coordination service.
   This is about the API and how it can help distributed s/w coordinate.
   It is not clear what such an API should look like!
 
-What do we mean by coordination as a service?
+### What do we mean by coordination as a service?
   Example: VMware-FT's test-and-set server
     If one replica can't talk to the other, grabs t-a-s lock, becomes sole server
     Must be exclusive to avoid two primaries (e.g. if network partition)
@@ -137,7 +137,7 @@ What do we mean by coordination as a service?
     Who is the master; lists of workers; division of labor; status of tasks
   A general-purpose service would save much effort!
 
-Could we use a Lab 3 key/value store as a generic coordination service?
+### Could we use a Lab 3 key/value store as a generic coordination service?
   For example, to choose new GFS master if multiple replicas want to take over?
   perhaps
     Put("master", my IP address)
@@ -153,7 +153,7 @@ Could we use a Lab 3 key/value store as a generic coordination service?
     periodic Get()s?
     lots of polling...
 
-Zookeeper API overview (Figure 1)
+### Zookeeper API overview (Figure 1)
   the state: a file-system-like tree of znodes
   file names, file content, directories, path names
   typical use: configuration info in znodes
@@ -165,7 +165,7 @@ Zookeeper API overview (Figure 1)
     ephemeral
     sequential: name + seqno
 
-Operations on znodes (Section 2.2)
+### Operations on znodes (Section 2.2)
   create(path, data, flags)
     exclusive -- only first create indicates success
   delete(path, version)
