@@ -29,4 +29,4 @@ export GOPATH=$GOPATH:$(pwd)
 
 ### Notes
 
-- Tne source code also contains `/kvpaxos`, the implementation of consensus algorithm [paxos](https://en.wikipedia.org/wiki/Paxos_(computer_science));
+Tne source code also contains `/kvpaxos`, the implementation of consensus algorithm [paxos](https://en.wikipedia.org/wiki/Paxos_(computer_science));
