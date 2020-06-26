@@ -37,7 +37,8 @@ func cleanup(kva []*KVPaxos) {
 	}
 }
 
-// predict effect of Append(k, val) if old value is prev.
+// predict effect of Append(k, val) 
+// if old value is prev.
 func NextValue(prev string, val string) string {
 	return prev + val
 }
