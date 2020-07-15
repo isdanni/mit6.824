@@ -475,7 +475,7 @@ func TestDoneMax(t *testing.T) {
 
 	pxa[0].Start(0, "x")
 	waitn(t, pxa, 0, npaxos)
-
+	// Check each message
 	for i := 1; i <= 10; i++ {
 		pxa[0].Start(i, "y")
 		waitn(t, pxa, i, npaxos)
@@ -496,7 +496,7 @@ func TestDoneMax(t *testing.T) {
 			t.Fatalf("Max() did not return correct result %d after calling Done(); returned %d", 10, mx)
 		}
 	}
-
+	
 	fmt.Printf("  ... Passed\n")
 }
 
